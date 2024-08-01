@@ -1,0 +1,38 @@
+[
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=invidious.io&sz=%size%",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/hungtx2001/extension",
+        "fileSize": 12881,
+        "status": 1,
+        "authors": [
+            "Cloudburst"
+        ],
+        "tvTypes": [
+            "Others"
+        ],
+        "version": 5,
+        "internalName": "InvidiousProvider",
+        "description": "Watch content from any invidious instance",
+        "url": "https://raw.githubusercontent.com/hungtx2001/extension/builds/InvidiousProvider.cs3",
+        "name": "InvidiousProvider"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=twitch.tv&sz=%size%",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/hungtx2001/extension",
+        "fileSize": 12210,
+        "status": 1,
+        "authors": [
+            "CranberrySoup"
+        ],
+        "tvTypes": [
+            "Live"
+        ],
+        "version": 1,
+        "internalName": "TwitchProvider",
+        "description": "Watch livestreams from Twitch",
+        "url": "https://raw.githubusercontent.com/hungtx2001/extension/builds/TwitchProvider.cs3",
+        "name": "TwitchProvider"
+    }
+]
