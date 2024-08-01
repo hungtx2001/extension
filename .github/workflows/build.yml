@@ -30,7 +30,7 @@ jobs:
           path: "builds"
       
       - name: Clean old builds
-        run: rm $GITHUB_WORKSPACE/builds/*.cs3 || true
+        run: rm https://github.com/hungtx2001/extension/builds/*.cs3 || true
 
       - name: Setup JDK 11
         uses: actions/setup-java@v1
@@ -45,8 +45,8 @@ jobs:
           cd $GITHUB_WORKSPACE/src
           chmod +x gradlew
           ./gradlew make makePluginsJson
-          cp **/build/*.cs3 $GITHUB_WORKSPACE/builds
-          cp build/plugins.json $GITHUB_WORKSPACE/builds
+          cp **/build/*.cs3 https://github.com/hungtx2001/extension/builds
+          cp build/plugins.json https://github.com/hungtx2001/extension/builds
 
       - name: Push builds
         run: |
