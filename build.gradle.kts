@@ -35,7 +35,7 @@ subprojects {
     apply(plugin = "com.lagradost.cloudstream3.gradle")
 
     cloudstream {
-        // when running through github workflow, GITHUB_REPOSITORY should contain current repository name
+        // when running through GitHub workflow, GITHUB_REPOSITORY should contain current repository name
         // you can modify it to use other git hosting services, like gitlab
         setRepo(System.getenv("GITHUB_REPOSITORY") ?: "https://github.com/user/repo")
     }
@@ -44,6 +44,7 @@ subprojects {
         defaultConfig {
             minSdk = 21
             compileSdkVersion(33)
+            //noinspection OldTargetApi
             targetSdk = 33
         }
 
@@ -69,14 +70,14 @@ subprojects {
         val implementation by configurations
 
         // Stubs for all Cloudstream classes
-        apk("com.lagradost:cloudstream3:pre-release")
+        apk("com.gradualist:cloudstream3:pre-release")
 
         // these dependencies can include any of those which are added by the app,
-        // but you dont need to include any of them if you dont need them
+        // but you don't need to include any of them if you dont need them
         // https://github.com/recloudstream/cloudstream/blob/master/app/build.gradle
         implementation(kotlin("stdlib")) // adds standard kotlin features, like listOf, mapOf etc
         implementation("com.github.Blatzar:NiceHttp:0.4.11") // http library
-        implementation("org.jsoup:jsoup:1.16.2") // html parser
+        implementation("org.jsoup:jsoup:1.17.2") // html parser
     }
 }
 
