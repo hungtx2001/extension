@@ -3,6 +3,6 @@
   "description": "extension-repo",
   "manifestVersion": 1,
   "pluginLists": [
-    "https://raw.githubusercontent.com/hungtx2001/extension/builds/plugins.json"
+    "https://raw.githubusercontent.com/hungtx2001/extension/builds/plugins.json?token=GHSAT0AAAAAACSQIOVUGSIU4ROKVZM4MGE6ZVLSMPQ"
   ]
 }
