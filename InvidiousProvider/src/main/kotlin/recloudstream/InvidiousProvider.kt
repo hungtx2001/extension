@@ -85,14 +85,14 @@ class InvidiousProvider : MainAPI() { // all providers must be an instance of Ma
                 title,
                 "${provider.mainUrl}/watch?v=$videoId",
                 TvType.Movie,
-                "$videoId"
+                videoId
             ) {
                 plot = description
                 posterUrl = "${provider.mainUrl}/vi/$videoId/hqdefault.jpg"
                 recommendations = recommendedVideos.map { it.toSearchResponse(provider) }
                 actors = listOf(
                     ActorData(
-                        Actor(author, authorThumbnails.get(authorThumbnails.size - 1)?.url ?: ""),
+                        Actor(author, authorThumbnails[authorThumbnails.size - 1].url),
                         roleString = "Author"
                     )
                 )
@@ -132,6 +132,6 @@ class InvidiousProvider : MainAPI() { // all providers must be an instance of Ma
     }
 
     companion object {
-        fun String.encodeUri() = URLEncoder.encode(this, "utf8")
+        fun String.encodeUri(): String = URLEncoder.encode(this, "utf8")
     }
 }

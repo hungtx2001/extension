@@ -100,7 +100,7 @@ class TwitchProvider : MainAPI() {
         )
     }
 
-    override suspend fun search(query: String): List<SearchResponse>? {
+    override suspend fun search(query: String): List<SearchResponse> {
         val document = app.get("$mainUrl/search", params = mapOf("q" to query), referer = mainUrl).document
         return document.select("table.tops tr").map { it.toLiveSearchResponse() }
     }
