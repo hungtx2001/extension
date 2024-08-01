@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Plugins
         run: |
-          cd $GITHUB_WORKSPACE/src
+          cd https://github.com/hungtx2001/extension/src
           chmod +x gradlew
           ./gradlew make makePluginsJson
           cp **/build/*.cs3 https://github.com/hungtx2001/extension/builds
