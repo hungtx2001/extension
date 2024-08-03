@@ -1,4 +1,4 @@
-package recloudstream
+package example
 
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.ExtractorApi
