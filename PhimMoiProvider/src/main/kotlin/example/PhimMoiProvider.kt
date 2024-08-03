@@ -9,7 +9,7 @@ import org.jsoup.nodes.Element
 import java.net.URLDecoder
 
 class PhimmoichillProvider : MainAPI() {
-  override var mainUrl = "https://phimmoichillv.net"
+  override var mainUrl = "https://motchillj.tv"
   override var name = "Phimmoichill"
   override val hasMainPage = true
   override var lang = "vi"
@@ -22,13 +22,12 @@ class PhimmoichillProvider : MainAPI() {
   )
 
   override val mainPage = mainPageOf(
-    "$mainUrl/genre/phim-chieu-rap/page-" to "Phim Chiếu Rạp",
-    "$mainUrl/list/phim-le/page-" to "Phim Lẻ",
-    "$mainUrl/list/phim-bo/page-" to "Phim Bộ",
-    "$mainUrl/genre/phim-hoat-hinh/page-" to "Phim Hoạt Hình",
-    "$mainUrl/country/phim-han-quoc/page-" to "Phim Hàn Quốc",
-    "$mainUrl/country/phim-trung-quoc/page-" to "Phim Trung Quốc",
-    "$mainUrl/country/phim-thai-lan/page-" to "Phim Thái Lan",
+    "$mainUrl/the-loai/phim-chieu-rap.html" to "Phim Chiếu Rạp",
+    "$mainUrl/phim-le.html" to "Phim Lẻ",
+    "$mainUrl/phim-bo.html" to "Phim Bộ",
+    "$mainUrl/the-loai/hoat-hinh.html" to "Phim Hoạt Hình",
+    "$mainUrl/quoc-gia/han-quoc.html" to "Phim Hàn Quốc",
+    "$mainUrl/quoc-gia/trung-quoc.html" to "Phim Trung Quốc",
   )
 
   override suspend fun getMainPage(
