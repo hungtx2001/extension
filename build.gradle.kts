@@ -1,4 +1,4 @@
-import com.lagradost.cloudstream3.gradle.CloudstreamExtension 
+import com.lagradost.cloudstream3.gradle.CloudstreamExtension
 import com.android.build.gradle.BaseExtension
 
 buildscript {
@@ -44,7 +44,6 @@ subprojects {
         defaultConfig {
             minSdk = 21
             compileSdkVersion(33)
-            //noinspection OldTargetApi
             targetSdk = 33
         }
 
@@ -58,9 +57,9 @@ subprojects {
                 jvmTarget = "1.8" // Required
                 // Disables some unnecessary features
                 freeCompilerArgs = freeCompilerArgs +
-                        "-Xno-call-assertions" +
-                        "-Xno-param-assertions" +
-                        "-Xno-receiver-assertions"
+                  "-Xno-call-assertions" +
+                  "-Xno-param-assertions" +
+                  "-Xno-receiver-assertions"
             }
         }
     }
@@ -73,7 +72,7 @@ subprojects {
         apk("com.lagradost:cloudstream3:pre-release")
 
         // these dependencies can include any of those which are added by the app,
-        // but you don't need to include any of them if you dont need them
+        // but you dont need to include any of them if you dont need them
         // https://github.com/recloudstream/cloudstream/blob/master/app/build.gradle
         implementation(kotlin("stdlib")) // adds standard kotlin features, like listOf, mapOf etc
         implementation("com.github.Blatzar:NiceHttp:0.4.11") // http library
