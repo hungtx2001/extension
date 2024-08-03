@@ -1,4 +1,4 @@
-import com.lagradost.cloudstream3.gradle.CloudstreamExtension 
+import com.lagradost.cloudstream3.gradle.CloudstreamExtension
 import com.android.build.gradle.BaseExtension
 
 buildscript {
@@ -10,10 +10,10 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.2.2")
+        classpath("com.android.tools.build:gradle:7.0.4")
         // Cloudstream gradle plugin which makes everything work and builds plugins
         classpath("com.github.recloudstream:gradle:-SNAPSHOT")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.23")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.21")
     }
 }
 
@@ -41,28 +41,25 @@ subprojects {
     }
 
     android {
-        namespace = "com.lagradost.cloudstream3.plugins"
-        compileSdkVersion(33)
-
         defaultConfig {
             minSdk = 21
+            compileSdkVersion(33)
             targetSdk = 33
-            multiDexEnabled = true
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
         }
 
         tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
             kotlinOptions {
-                jvmTarget = "17" // Required
+                jvmTarget = "1.8" // Required
                 // Disables some unnecessary features
                 freeCompilerArgs = freeCompilerArgs +
-                        "-Xno-call-assertions" +
-                        "-Xno-param-assertions" +
-                        "-Xno-receiver-assertions"
+                  "-Xno-call-assertions" +
+                  "-Xno-param-assertions" +
+                  "-Xno-receiver-assertions"
             }
         }
     }
@@ -72,15 +69,14 @@ subprojects {
         val implementation by configurations
 
         // Stubs for all Cloudstream classes
-        apk("com.gradualist:cloudstream3:pre-release")
+        apk("com.lagradost:cloudstream3:pre-release")
 
         // these dependencies can include any of those which are added by the app,
-        // but you don't need to include any of them if you dont need them
+        // but you dont need to include any of them if you dont need them
         // https://github.com/recloudstream/cloudstream/blob/master/app/build.gradle
         implementation(kotlin("stdlib")) // adds standard kotlin features, like listOf, mapOf etc
         implementation("com.github.Blatzar:NiceHttp:0.4.11") // http library
         implementation("org.jsoup:jsoup:1.17.2") // html parser
-        implementation("androidx.multidex:multidex:2.0.1")
     }
 }
 
