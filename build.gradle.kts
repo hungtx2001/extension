@@ -1,5 +1,5 @@
+import com.lagradost.cloudstream3.gradle.CloudstreamExtension 
 import com.android.build.gradle.BaseExtension
-import com.lagradost.cloudstream3.gradle.CloudstreamExtension
 
 buildscript {
     repositories {
@@ -10,10 +10,10 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.2.2")
+        classpath("com.android.tools.build:gradle:7.0.4")
         // Cloudstream gradle plugin which makes everything work and builds plugins
         classpath("com.github.recloudstream:gradle:-SNAPSHOT")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.23")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.21")
     }
 }
 
@@ -41,11 +41,10 @@ subprojects {
     }
 
     android {
-        namespace = "com.lagradost.cloudstream3"
-        compileSdkVersion(34)
-
         defaultConfig {
             minSdk = 21
+            compileSdkVersion(33)
+            //noinspection OldTargetApi
             targetSdk = 33
         }
 
