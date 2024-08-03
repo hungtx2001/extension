@@ -41,10 +41,11 @@ subprojects {
     }
 
     android {
+        namespace = "com.lagradost.cloudstream3.plugins"
+        compileSdkVersion(33)
+
         defaultConfig {
             minSdk = 21
-            compileSdkVersion(33)
-            //noinspection OldTargetApi
             targetSdk = 33
         }
 
